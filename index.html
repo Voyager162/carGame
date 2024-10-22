@@ -45,12 +45,19 @@
         height: 20px;
         background: linear-gradient(to right, #ff7e5f, #feb47b);
       }
-      #unity-logo {
+      #unity-logo,
+      #unity-webgl-logo {
         margin: 20px auto;
         width: 80px;
         height: 80px;
-        background: url('TemplateData/unity-logo.png') no-repeat center center;
         background-size: cover;
+        background-position: center;
+      }
+      #unity-logo {
+        background: url('TemplateData/unity-logo.png') no-repeat;
+      }
+      #unity-webgl-logo {
+        background: url('TemplateData/webgl-logo.png') no-repeat;
       }
       #unity-footer {
         display: flex;
@@ -64,15 +71,18 @@
         flex: 1;
         padding: 10px;
         text-align: center;
+        visibility: hidden; /* Hide text content of the icons */
+      }
+      #unity-fullscreen-button {
+        cursor: pointer;
+        transition: transform 0.3s;
+        visibility: visible; /* Ensure fullscreen button is visible */
       }
       #unity-footer #unity-build-title {
         font-weight: bold;
         color: #fff;
         letter-spacing: 2px;
-      }
-      #unity-fullscreen-button {
-        cursor: pointer;
-        transition: transform 0.3s;
+        visibility: visible; /* Keep build title visible */
       }
       #unity-fullscreen-button:hover {
         transform: scale(1.1);
@@ -95,8 +105,8 @@
       </div>
       <div id="unity-warning"></div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo">WebGL Logo</div>
-        <div id="unity-fullscreen-button">Fullscreen</div>
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">CarsForAPCSP</div>
       </div>
     </div>
